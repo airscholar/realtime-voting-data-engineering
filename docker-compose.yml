@@ -62,3 +62,21 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+#  spark-master:
+#    image: bitnami/spark:latest
+#    command: bin/spark-class org.apache.spark.deploy.master.Master
+#    ports:
+#      - "9090:8080"
+#      - "7077:7077"
+
+#  spark-worker:
+#    image: bitnami/spark:latest
+#    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+#    depends_on:
+#      - spark-master
+#    environment:
+#      SPARK_MODE: worker
+#      SPARK_WORKER_CORES: 2
+#      SPARK_WORKER_MEMORY: 1g
+#      SPARK_MASTER_URL: spark://spark-master:7077
